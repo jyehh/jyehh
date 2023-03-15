@@ -6,18 +6,20 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.boot.product.entity.CategoryVo;
 import com.boot.product.entity.ProductDto;
 import com.boot.product.entity.ProductVo;
+import com.boot.product.repository.CategoryRepository;
 import com.boot.product.repository.ProductRepository;
 
 @Service
-public class ProductService {
+public class CategoryService {
 
 	@Autowired
-	ProductRepository productRepository;
+	CategoryRepository categoryRepository;
 	
 	//다건조회
-	public List<ProductVo> selectProductVo(){
+	public List<CategoryVo> selectCategoryVo(){
 		/*
 		 * ProductVo prdVo = new ProductVo(); ProductDto prdDto = new ProductDto();
 		 * prdVo.setPrdNm("testest"); prdVo.setStock(20); prdVo.setCategory1("테스트1");
@@ -32,27 +34,28 @@ public class ProductService {
 		 * 
 		 * productRepository.save(prdinfo);
 		 */
-		List<ProductVo> info = productRepository.findAll();
+		List<CategoryVo> info = categoryRepository.findAll();
 		return info;
 	}
 	
 	//단건조회
-	public Optional<ProductVo> selectProductById(Long id){
+	public Optional<CategoryVo> selectCategoryById(Long id){
 		
-		Optional<ProductVo> info = productRepository.findById(id);
+		Optional<CategoryVo> info = categoryRepository.findById(id);
 		return info;
 	}
 	
 	//prdcd 가 있으면 update 없으면 insert
-	public List<ProductVo> upsertProductVo(ProductVo productVo){
+	public List<CategoryVo> upsertCategoryVo(CategoryVo categoryVo){
 		
-			ProductVo prdvo = new ProductVo();
-			prdvo.setPrdCd(productVo.getPrdCd());
-			prdvo.setPrdNm(productVo.getPrdNm());
-			prdvo.setStock(productVo.getStock());
-			prdvo.setCategory1(productVo.getCategory1());
-			prdvo.setCategory2(productVo.getCategory2());
-			productRepository.save(prdvo);
+		CategoryVo catvo = new CategoryVo();
+		catvo.setCaId(categoryVo.getCaId());
+		catvo.setPrdCd(categoryVo.getPrdCd());
+		catvo.setPrdNm(categoryVo.getPrdNm());
+		catvo.setLrCl(categoryVo.getLrCl());
+		catvo.setMdCl(categoryVo.getMdCl());
+		catvo.setSmCl(categoryVo.getSmCl());
+		categoryRepository.save(catvo);
 		
 		return null;
 	}

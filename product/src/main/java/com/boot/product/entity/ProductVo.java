@@ -17,6 +17,7 @@ public class ProductVo {
 	private Long prdCd;
 	private String prdNm;
 	private int stock;
-	
+	private String category1;
+	private String category2;
 	
 }

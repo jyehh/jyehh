@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.boot.product.ProductService.CategoryService;
 import com.boot.product.ProductService.ProductService;
+import com.boot.product.entity.CategoryVo;
 import com.boot.product.entity.ProductDto;
 import com.boot.product.entity.ProductVo;
 
@@ -20,21 +22,21 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @Slf4j
-public class ProductController {
+public class CategoryController {
 
 	@Autowired
-	ProductService productService;
+	CategoryService categoryService;
 
 	
-	@GetMapping("/product")
-	public List<ProductVo>  selectProductList() {
-		List<ProductVo> result = productService.selectProductVo();
+	@GetMapping("/category")
+	public List<CategoryVo>  selectProductList() {
+		List<CategoryVo> result = categoryService.selectCategoryVo();
 		return result;
 	}
 	
-	@GetMapping("/product/{id}")
-	public Optional<ProductVo> selectProductById(@PathVariable("id") Long id) {
-		Optional<ProductVo> result = productService.selectProductById(id);
+	@GetMapping("/category/{id}")
+	public Optional<CategoryVo> selectProductById(@PathVariable("id") Long id) {
+		Optional<CategoryVo> result = categoryService.selectCategoryById(id);
 		return result;
 	}
 	
@@ -50,9 +52,9 @@ public class ProductController {
 	 * }
 	 */
 	
-	@PostMapping("/product/{id}")
-	public List<ProductVo> upsertProduct(@RequestBody ProductVo productVo) {
-		List<ProductVo> result = productService.upsertProductVo(productVo);
+	@PostMapping("/category/{id}")
+	public List<CategoryVo> upsertProduct(@RequestBody CategoryVo categoryVo) {
+		List<CategoryVo> result = categoryService.upsertCategoryVo(categoryVo);
 		
 		log.debug("upsert");
 		return result;
