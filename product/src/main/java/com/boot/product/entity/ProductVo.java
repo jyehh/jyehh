@@ -1,12 +1,20 @@
 package com.boot.product.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -17,7 +25,6 @@ public class ProductVo {
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TODO_SEQ_GENERATOR" )
-	@JoinColumn(name="PRD_CD")
 	private Long prdCd;
 	
 	private String prdNm;
@@ -27,5 +34,10 @@ public class ProductVo {
 	private String category1;
 	
 	private String category2;
+	
+	@OneToMany(mappedBy = "product" )
+	@JsonIgnore
+	private List<CategoryVo> categories;
+
 	
 }

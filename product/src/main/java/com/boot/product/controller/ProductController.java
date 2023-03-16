@@ -52,6 +52,7 @@ public class ProductController {
 	
 	@PostMapping("/product/{id}")
 	public List<ProductVo> upsertProduct(@RequestBody ProductVo productVo) {
+		log.debug("upsert Start");
 		List<ProductVo> result = productService.upsertProductVo(productVo);
 		
 		log.debug("upsert");

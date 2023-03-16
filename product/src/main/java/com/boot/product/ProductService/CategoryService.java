@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.boot.product.dto.out.CategoryDto;
 import com.boot.product.dto.out.ProductDto;
 import com.boot.product.entity.CategoryVo;
 import com.boot.product.entity.ProductVo;
@@ -50,7 +51,12 @@ public class CategoryService {
 		
 		CategoryVo catvo = new CategoryVo();
 		catvo.setCaId(categoryVo.getCaId());
-		catvo.setPrdCd(categoryVo.getPrdCd());
+		
+		/*
+		 * ProductVo productVo = new ProductVo();
+		 * productVo.setPrdCd(categoryVo.getProduct());
+		 */
+		catvo.setProduct(categoryVo.getProduct());
 		catvo.setPrdNm(categoryVo.getPrdNm());
 		catvo.setLrCl(categoryVo.getLrCl());
 		catvo.setMdCl(categoryVo.getMdCl());

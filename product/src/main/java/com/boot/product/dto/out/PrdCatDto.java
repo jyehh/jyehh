@@ -1,15 +1,15 @@
 package com.boot.product.dto.out;
 
-import com.boot.product.entity.ProductVo;
-
 import lombok.Data;
 
 @Data
-public class CategoryDto {
+public class PrdCatDto {
 	
 	private Long caId;
-	private ProductVo product;
+	private Long prdCd;
 	private String prdNm;
+	private String category1;
+	private String category2;
 	private String lrCl;
 	private String mdCl;
 	private String smCl;
