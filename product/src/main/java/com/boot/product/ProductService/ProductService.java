@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.boot.product.entity.ProductDto;
+import com.boot.product.dto.out.ProductDto;
 import com.boot.product.entity.ProductVo;
 import com.boot.product.repository.ProductRepository;
 

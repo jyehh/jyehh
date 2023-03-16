@@ -1,9 +1,11 @@
 package com.boot.product.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Data;
@@ -13,11 +15,17 @@ import lombok.Data;
 @SequenceGenerator(name = "TODO_SEQ_GENERATOR", initialValue = 1, allocationSize = 1)
 public class ProductVo {
 
-	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TODO_SEQ_GENERATOR" )
+	@Id 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TODO_SEQ_GENERATOR" )
+	@JoinColumn(name="PRD_CD")
 	private Long prdCd;
+	
 	private String prdNm;
+	
 	private int stock;
+	
 	private String category1;
+	
 	private String category2;
 	
 }

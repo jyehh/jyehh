@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boot.product.ProductService.ProductService;
-import com.boot.product.entity.ProductDto;
+import com.boot.product.dto.out.ProductDto;
 import com.boot.product.entity.ProductVo;
 
 import lombok.extern.slf4j.Slf4j;
