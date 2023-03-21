@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.boot.option.dto.in.OptionConditionDto;
+import com.boot.option.dto.out.OptDetDto;
 import com.boot.option.dto.out.OptionDto;
 import com.boot.option.entity.OptionVO;
 import com.boot.option.repository.OptionJpaRepository;
@@ -34,6 +35,11 @@ public class OptionService {
 	//DD
 	public List<OptionVO> selectOptionByDTO(OptionConditionDto cond){
 		List<OptionVO> list = optionRepository.selectOptionVOs(cond);
+		return list;
+	}
+	
+	public List<OptionVO> selectOptDetailVOs(OptDetDto odt){
+		List<OptionVO> list = optionRepository.selectOptDetailVOs(odt);
 		return list;
 	}
 

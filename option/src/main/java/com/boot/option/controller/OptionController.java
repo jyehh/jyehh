@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boot.option.dto.in.OptionConditionDto;
+import com.boot.option.dto.out.OptDetDto;
 import com.boot.option.dto.out.OptionDto;
 import com.boot.option.entity.OptionVO;
 import com.boot.option.service.OptionService;
@@ -41,6 +42,11 @@ public class OptionController {
 	@GetMapping("/dto/{id}")
 	public List<OptionVO> selectOptionByDTO(@RequestBody OptionConditionDto cond){
 		List<OptionVO> result = optionService.selectOptionByDTO(cond);
+		return result;
+	}
+	@GetMapping("/optdte/{id}")
+	public List<OptionVO> selectOptDetailVOs(@RequestBody OptDetDto odt){
+		List<OptionVO> result = optionService.selectOptDetailVOs(odt);
 		return result;
 	}
 	
