@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.boot.product.CustomService.ProductCustomService;
 import com.boot.product.ProductService.CategoryService;
 import com.boot.product.ProductService.ProductService;
+import com.boot.product.dto.in.ProductConditonDto;
 import com.boot.product.dto.out.PrdCatDto;
 import com.boot.product.dto.out.ProductDto;
 import com.boot.product.entity.CategoryVo;
@@ -45,7 +46,11 @@ public class ProductCustomController {
 		return result;
 	}
 	
-	
+	@GetMapping("/prddto/{id}")
+	public List<ProductVo> selectOptionByDTO(@RequestBody ProductConditonDto pcd){
+		List<ProductVo> result = productCustomService.selectProductsVOs(pcd);
+		return result;
+	}
 	
 
 }

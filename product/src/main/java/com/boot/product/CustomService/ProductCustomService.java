@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.boot.product.dto.in.ProductConditonDto;
 import com.boot.product.dto.out.PrdCatDto;
 import com.boot.product.dto.out.ProductDto;
 import com.boot.product.entity.ProductVo;
@@ -28,5 +29,10 @@ public class ProductCustomService {
 		return result;
 	}
 	
+	public List<ProductVo> selectProductsVOs(ProductConditonDto pcd){
+	List<ProductVo> result = productCustomRepository.selectProductsVOs(pcd);
+		
+		return result;
+	}
 	
 }
