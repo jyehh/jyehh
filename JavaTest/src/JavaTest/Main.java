@@ -32,8 +32,11 @@ public class Main {
 		 * Class cs = new Class(); cs.run(); //클래스는 생성을 ㅂ만든다 cs.getClass();
 		 * cs.hashCode();
 		 * 
-		 * System.out.println(cs.publicString);
+		 * System.out.println(cs.publicString); System.out.println(cs.prtectedString);
+		 * System.out.println(cs.defalutString);
 		 */
+		  
+		 
 //	
 //	SuperClass sc = new SuperClass();
 //	sc.run();

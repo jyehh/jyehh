@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.boot.option.dto.in.OptionConditionDto;
 import com.boot.option.entity.OptionVO;
+import com.boot.option.entity.QOptionVO;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -23,7 +24,7 @@ public class OptionRepository {
 	
 	private JPAQueryFactory query;
 	
-	public OptionRepository() {
+	public OptionRepository(EntityManager em) {
 		this.query = new JPAQueryFactory(em);
 	}
 	

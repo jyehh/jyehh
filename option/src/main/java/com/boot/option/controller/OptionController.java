@@ -38,7 +38,7 @@ public class OptionController {
 		return result;
 	}
 	
-	@GetMapping("/option/dto/{id}")
+	@GetMapping("/dto/{id}")
 	public List<OptionVO> selectOptionByDTO(@RequestBody OptionConditionDto cond){
 		List<OptionVO> result = optionService.selectOptionByDTO(cond);
 		return result;
